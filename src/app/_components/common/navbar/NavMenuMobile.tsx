@@ -8,8 +8,8 @@ import {
   Icon,
   useDisclosure,
 } from "@chakra-ui/react";
-import NavLinksComponent from "@/app/_components/navbar/NavLinksComponent";
-import NavbarActions from "@/app/_components/navbar/NavbarActions";
+import NavLinksComponent from "@/app/_components/common/navbar/NavLinksComponent";
+import NavbarActions from "@/app/_components/common/navbar/NavbarActions";
 import { FiMenu } from "react-icons/fi";
 
 export function NavMenuMobile() {
