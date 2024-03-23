@@ -2,7 +2,8 @@
 
 import { Box, Flex } from "@chakra-ui/react";
 import NavLinksComponent from "@/app/_components/navbar/NavLinksComponent";
-import NavbarBrand from "./NavbarBrand";
+import NavbarBrand from "@/app/_components/navbar/NavbarBrand";
+import NavbarActions from "@/app/_components/navbar/NavbarActions";
 
 export default function Navbar() {
   return (
@@ -10,6 +11,7 @@ export default function Navbar() {
       <Flex justify="space-between" align="center">
         <NavbarBrand />
         <NavLinksComponent />
+        <NavbarActions />
       </Flex>
     </Box>
   );
