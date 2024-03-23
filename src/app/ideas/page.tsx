@@ -56,9 +56,10 @@ export default function Ideas() {
             borderTop="1px solid"
             borderColor="gray.700"
             backdropFilter="blur(5px)"
-            backgroundColor="rgba(26, 32, 44, 0.3)"
+            backgroundColor="rgba(26, 32, 44, 0.7)"
             pb={8}
             mt={20}
+            px={4}
           >
             <DrawerBody>
               <Box as="h2" fontSize="xl" fontWeight="bold" py={4} color="white">

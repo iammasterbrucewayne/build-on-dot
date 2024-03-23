@@ -5,6 +5,7 @@ import {
   Drawer,
   DrawerBody,
   DrawerContent,
+  DrawerOverlay,
   Icon,
   useDisclosure,
 } from "@chakra-ui/react";
@@ -33,10 +34,12 @@ export function NavMenuMobile() {
         <FiMenu size={24} />
       </Button>
       <Drawer isOpen={isOpen} onClose={onClose} placement="top">
+        <DrawerOverlay />
         <DrawerContent
           backdropFilter="blur(5px)"
-          backgroundColor="rgba(26, 32, 44, 0.3)"
+          backgroundColor="rgba(26, 32, 44, 0.7)"
           pb={8}
+          px={4}
         >
           <DrawerBody>
             <NavLinksComponent isMobile />
