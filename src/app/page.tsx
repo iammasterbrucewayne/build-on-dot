@@ -4,9 +4,9 @@ import Hero from "@/app/_components/home/hero";
 
 export default function Home() {
   return (
-    <Box as="main" p={4}>
+    <Box as="main" p={4} maxW="6xl" mx="auto">
       <Navbar />
-      <Box maxW="6xl" mx="auto" mt={20} p={4}>
+      <Box mt={20} p={4}>
         <Hero />
       </Box>
     </Box>
