@@ -40,6 +40,7 @@ export default function Ideas() {
         <Button
           as={Button}
           ref={filterRef}
+          display={{ base: "block", lg: "none" }}
           rounded="full"
           variant="outline"
           leftIcon={<FiFilter />}
