@@ -35,7 +35,7 @@ export function NavMenuMobile() {
       <Drawer isOpen={isOpen} onClose={onClose} placement="top">
         <DrawerContent
           backdropFilter="blur(5px)"
-          backgroundColor="rgba(0, 0, 0, 0.3)"
+          backgroundColor="rgba(26, 32, 44, 0.3)"
           pb={8}
         >
           <DrawerBody>
