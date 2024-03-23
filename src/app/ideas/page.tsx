@@ -103,6 +103,7 @@ export default function Ideas() {
             <Box as="h2" fontSize="xl" fontWeight="bold" mb={2}>
               Categories
             </Box>
+            <Divider my={4} />
             <Stack>
               {map(Object.values(Category), (category: string) => (
                 <Link
