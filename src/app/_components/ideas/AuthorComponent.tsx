@@ -1,7 +1,7 @@
 import { Avatar, HStack, Text } from "@chakra-ui/react";
 import { Author } from "../../_lib/types/ideas";
 
-export default function Author({ author }: { author: Author }) {
+export default function AuthorComponent({ author }: { author: Author }) {
   return (
     <HStack>
       <Avatar src={author.profilePicture} size="sm" />

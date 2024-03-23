@@ -7,7 +7,7 @@ import {
   Link,
   Text,
 } from "@chakra-ui/react";
-import Author from "./Author";
+import Author from "./AuthorComponent";
 import DifficultyTag from "./DifficultyTag";
 import { Idea } from "../../_lib/types/ideas";
 
