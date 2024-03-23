@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Providers } from "@/app/providers";
+import { Providers } from "@/app/_lib/providers";
 
 export const metadata: Metadata = {
   title: "Build On Dot",
