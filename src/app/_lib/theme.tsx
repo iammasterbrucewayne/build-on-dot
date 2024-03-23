@@ -4,9 +4,12 @@ export const theme = extendTheme({
   styles: {
     global: {
       body: {
-        bg: "gray.900",
         color: "gray.300",
       },
     },
+  },
+  config: {
+    initialColorMode: "dark",
+    useSystemColorMode: false,
   },
 });

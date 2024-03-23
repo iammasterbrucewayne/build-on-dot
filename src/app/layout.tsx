@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Providers } from "@/app/_lib/providers";
+import { ColorModeScript } from "@chakra-ui/react";
 
 export const metadata: Metadata = {
   title: "Build On Dot",
@@ -14,6 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <ColorModeScript initialColorMode="dark" />
         <Providers>{children}</Providers>
       </body>
     </html>
