@@ -1,4 +1,5 @@
 export enum Category {
+  All = "All",
   Payments = "Payments",
   NFTs = "NFTs",
   DeFi = "DeFi",
