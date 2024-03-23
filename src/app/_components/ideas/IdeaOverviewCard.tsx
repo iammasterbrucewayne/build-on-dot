@@ -18,7 +18,6 @@ export default function IdeaOverviewCard({ idea }: { idea: Idea }) {
       as={Link}
       href={`/ideas/${idea.slug}`}
       variant="outline"
-      my={4}
       color="white"
       _hover={{
         textDecoration: "none",
