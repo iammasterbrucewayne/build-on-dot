@@ -14,7 +14,10 @@ export const ideas: Idea[] = [
       problem:
         "NFTs are hard to sell. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
       solution: "A marketplace for NFTs",
-      useful_resources: ["https://opensea.io"],
+      useful_resources: [
+        { name: "OpenSea", url: "https://opensea.io" },
+        { name: "Rarible", url: "https://rarible.com" },
+      ],
     },
     category: Category.NFTs,
     difficulty: Difficulty.Beginner,
@@ -30,7 +33,16 @@ export const ideas: Idea[] = [
       problem:
         "DeFi lending is expensive. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
       solution: "A lending protocol with low fees",
-      useful_resources: ["https://compound.finance"],
+      useful_resources: [
+        {
+          name: "Aave",
+          url: "https://aave.com",
+        },
+        {
+          name: "Compound",
+          url: "https://compound.com",
+        },
+      ],
     },
     category: Category.DeFi,
     difficulty: Difficulty.Advanced,
@@ -46,7 +58,16 @@ export const ideas: Idea[] = [
       problem:
         "Community is not engaged. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
       solution: "A DAO for community governance",
-      useful_resources: ["https://snapshot.org"],
+      useful_resources: [
+        {
+          name: "Snapshot",
+          url: "https://snapshot.org",
+        },
+        {
+          name: "Aragon",
+          url: "https://aragon.org",
+        },
+      ],
     },
     category: Category.DAO,
     difficulty: Difficulty.Intermediate,

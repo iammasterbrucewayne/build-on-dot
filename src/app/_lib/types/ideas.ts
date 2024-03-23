@@ -6,10 +6,15 @@ export type Author = {
   profilePicture: string;
 };
 
+export type Resource = {
+  name: string;
+  url: string;
+};
+
 export type IdeaDescription = {
   problem: string;
   solution: string;
-  useful_resources: string[];
+  useful_resources: Resource[];
 };
 
 export type Idea = {
