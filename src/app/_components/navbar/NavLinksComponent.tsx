@@ -8,7 +8,7 @@ export default function NavLinksComponent() {
   return (
     <HStack spacing={4}>
       {map(NavLinks, (link) => (
-        <Link href={link.href} key={link.title}>
+        <Link href={link.href} key={link.title} fontWeight="semibold">
           {link.title}
         </Link>
       ))}
