@@ -1,9 +1,12 @@
 "use client";
 
+import { getRandomIdea } from "@/app/_lib/utils/getRandomIdea";
 import { Link } from "@chakra-ui/next-js";
 import { Button, ButtonGroup } from "@chakra-ui/react";
+import { useRouter } from "next/navigation";
 
 export default function HeroButtonGroup() {
+  const router = useRouter();
   return (
     <ButtonGroup mt={12}>
       <Button
@@ -44,6 +47,10 @@ export default function HeroButtonGroup() {
         py={{
           base: 6,
           md: 8,
+        }}
+        onClick={() => {
+          console.log("Random Idea");
+          router.push(`/ideas/${getRandomIdea()}`);
         }}
       >
         Random Idea
