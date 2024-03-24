@@ -7,10 +7,15 @@ if (!process.env.MONGODB_URI) {
 }
 
 const uri = process.env.MONGODB_URI;
-
 const client = new MongoClient(uri);
 
+let isConnected = false;
+
 export default async function connectToDatabase() {
-  await client.connect();
+  if (!isConnected) {
+    await client.connect();
+    isConnected = true;
+  }
+
   return client.db("build-on-dot");
 }
