@@ -8,7 +8,7 @@ import { FiSearch } from "react-icons/fi";
 export default function Searchbar({ ...props }) {
   const search = useSearchParams();
   const router = useRouter();
-  const [query, setQuery] = useState(search.get("query"));
+  const [query, setQuery] = useState(search?.get("query"));
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
@@ -16,7 +16,7 @@ export default function Searchbar({ ...props }) {
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
-      const category = search.get("category");
+      const category = search?.get("category");
       router.push(
         `/ideas?query=${query}${category ? "&category=" + category : ""}`
       );
@@ -24,7 +24,7 @@ export default function Searchbar({ ...props }) {
   };
 
   useEffect(() => {
-    setQuery(search.get("query"));
+    setQuery(search ? search.get("query") : "");
   }, [search]);
 
   return (

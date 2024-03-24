@@ -3,7 +3,7 @@
 import Navbar from "@/app/_components/common/navbar";
 import Searchbar from "@/app/_components/common/searchbar";
 import AuthorComponent from "@/app/_components/ideas/AuthorComponent";
-import { ideas } from "@/app/_lib/constants/placeholderIdeas";
+import getIdeas from "@/app/_lib/utils/getIdeas";
 import { Idea } from "@/app/_lib/types/ideas";
 import { Link } from "@chakra-ui/next-js";
 import {
@@ -18,16 +18,27 @@ import {
   UnorderedList,
 } from "@chakra-ui/react";
 import { redirect } from "next/navigation";
+import { useContext } from "react";
+import IdeasContext from "@/app/_lib/context/ideas-context";
+import { isNil } from "lodash";
+import IdeaPageSkeleton from "@/app/_components/ideas/IdeaPageSkeleton";
 
 export default function IdeaPage({ params }: { params: { slug: string } }) {
-  const idea = ideas.find((idea) => idea.slug === params.slug);
-  if (!idea) {
+  const ideas = useContext(IdeasContext);
+  const isLoading = isNil(ideas);
+  const idea = ideas?.find((idea) => idea.slug === params.slug);
+  if (!isLoading && !idea) {
     redirect("/404");
   }
 
-  const { title, description, author, category, slug }: Idea = idea;
+  let title, description, author, category, slug;
+  if (idea) {
+    ({ title, description, author, category, slug } = idea);
+  }
 
-  return (
+  return isLoading ? (
+    <IdeaPageSkeleton />
+  ) : (
     <Box as="main" p={4} maxW="6xl" mx="auto">
       <Navbar />
       <Box p={4}>
@@ -50,27 +61,26 @@ export default function IdeaPage({ params }: { params: { slug: string } }) {
             <Heading as="h1" size="xl" fontWeight="black">
               {title}
             </Heading>
-            <AuthorComponent author={author} isFull />
+            {!isNil(author) && <AuthorComponent author={author} isFull />}
           </Stack>
           <Stack spacing={6}>
             <Heading as="h2" size="lg">
               Problem to solve
             </Heading>
-            <Text>{description.problem}</Text>
+            <Text>{description?.problem}</Text>
           </Stack>
           <Stack spacing={6}>
             <Heading as="h2" size="lg">
               Possible Solution
             </Heading>
-            <Text>{description.problem}</Text>
+            <Text>{description?.problem}</Text>
           </Stack>
           <Stack spacing={6}>
             <Heading as="h2" size="lg">
               Useful resources
             </Heading>
-
             <UnorderedList spacing={2}>
-              {description.useful_resources.map((resource, index) => (
+              {description?.useful_resources.map((resource, index) => (
                 <ListItem key={index}>
                   <Link href={resource.url} color="blue.200" isExternal>
                     {resource.name}
@@ -86,8 +96,9 @@ export default function IdeaPage({ params }: { params: { slug: string } }) {
 }
 
 export async function getStaticPaths() {
+  const ideas = await getIdeas();
   return {
-    paths: ideas.map((idea) => ({
+    paths: ideas.map((idea: Idea) => ({
       params: {
         slug: idea.slug,
       },

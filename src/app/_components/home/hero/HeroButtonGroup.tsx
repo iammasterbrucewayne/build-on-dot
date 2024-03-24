@@ -1,12 +1,20 @@
 "use client";
 
-import { getRandomIdea } from "@/app/_lib/utils/getRandomIdea";
+import IdeasContext from "@/app/_lib/context/ideas-context";
 import { Link } from "@chakra-ui/next-js";
 import { Button, ButtonGroup } from "@chakra-ui/react";
+import { isNil, random } from "lodash";
 import { useRouter } from "next/navigation";
+import { useContext } from "react";
 
 export default function HeroButtonGroup() {
   const router = useRouter();
+
+  const ideas = useContext(IdeasContext);
+
+  const getRandomIdea = () => {
+    if (ideas) return ideas[random(0, ideas.length - 1)].slug;
+  };
   return (
     <ButtonGroup mt={12}>
       <Button
@@ -48,8 +56,8 @@ export default function HeroButtonGroup() {
           base: 6,
           md: 8,
         }}
+        isDisabled={isNil(ideas) || ideas.length === 0}
         onClick={() => {
-          console.log("Random Idea");
           router.push(`/ideas/${getRandomIdea()}`);
         }}
       >

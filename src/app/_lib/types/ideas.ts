@@ -17,11 +17,11 @@ export type IdeaDescription = {
   useful_resources: Resource[];
 };
 
-export type Idea = {
+export interface Idea {
   slug: string;
   title: string;
   author: Author;
   description: IdeaDescription;
   category: Category;
   difficulty: Difficulty;
-};
+}
