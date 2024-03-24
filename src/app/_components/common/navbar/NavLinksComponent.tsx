@@ -15,6 +15,7 @@ export default function NavLinksComponent({
       key={link.title}
       fontWeight="semibold"
       py={isMobile ? 3 : "initial"}
+      isExternal={link.isExternal}
     >
       {link.title}
     </Link>
