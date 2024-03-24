@@ -15,6 +15,8 @@ import {
   Text,
   useDisclosure,
 } from "@chakra-ui/react";
+import { Link } from "@chakra-ui/next-js";
+import { FiFilter } from "react-icons/fi";
 import Navbar from "@/app/_components/common/navbar";
 import { ideas } from "@/app/_lib/constants/placeholderIdeas";
 import IdeaOverviewCard from "@/app/_components/ideas/IdeaOverviewCard";
@@ -22,8 +24,7 @@ import { Idea } from "@/app/_lib/types/ideas";
 import { useSearchParams } from "next/navigation";
 import { filterIdeas } from "@/app/_lib/utils/filterIdeas";
 import { Category } from "@/app/_lib/constants/ideas/category";
-import { Link } from "@chakra-ui/next-js";
-import { FiFilter } from "react-icons/fi";
+import Searchbar from "@/app/_components/common/searchbar";
 import { map, isEmpty } from "lodash";
 
 export default function Ideas() {
@@ -36,6 +37,9 @@ export default function Ideas() {
   return (
     <Box as="main" p={4} maxW="6xl" mx="auto">
       <Navbar />
+      <Box px={4}>
+        <Searchbar size="lg" mt={12} maxWidth="xl" mx="auto" />
+      </Box>
       <Stack p={4} spacing={4} align="end">
         <Button
           as={Button}

@@ -1,6 +1,7 @@
 "use client";
 
 import Navbar from "@/app/_components/common/navbar";
+import Searchbar from "@/app/_components/common/searchbar";
 import AuthorComponent from "@/app/_components/ideas/AuthorComponent";
 import { ideas } from "@/app/_lib/constants/placeholderIdeas";
 import { Idea } from "@/app/_lib/types/ideas";
@@ -30,6 +31,7 @@ export default function IdeaPage({ params }: { params: { slug: string } }) {
     <Box as="main" p={4} maxW="6xl" mx="auto">
       <Navbar />
       <Box p={4}>
+        <Searchbar size="lg" mt={12} maxWidth="xl" mx="auto" mb={12} />
         <Breadcrumb separator=">">
           <BreadcrumbItem>
             <BreadcrumbLink href="/ideas/?category=All">All</BreadcrumbLink>

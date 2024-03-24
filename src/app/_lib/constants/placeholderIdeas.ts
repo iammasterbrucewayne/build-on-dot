@@ -4,7 +4,7 @@ import { Idea } from "../types/ideas";
 
 export const ideas: Idea[] = [
   {
-    slug: "1",
+    slug: "nft-marketplace",
     title: "NFT Marketplace",
     author: {
       name: "Alice",
@@ -23,7 +23,7 @@ export const ideas: Idea[] = [
     difficulty: Difficulty.Beginner,
   },
   {
-    slug: "2",
+    slug: "defi-lending-protocol",
     title: "DeFi Lending Protocol",
     author: {
       name: "Bob",
@@ -48,7 +48,7 @@ export const ideas: Idea[] = [
     difficulty: Difficulty.Advanced,
   },
   {
-    slug: "3",
+    slug: "dao-for-community",
     title: "DAO for Community",
     author: {
       name: "Charlie",
@@ -71,5 +71,30 @@ export const ideas: Idea[] = [
     },
     category: Category.DAO,
     difficulty: Difficulty.Intermediate,
+  },
+  {
+    slug: "music-nft-platform",
+    title: "Music NFT Platform",
+    author: {
+      name: "David",
+      profilePicture: "https://avatars.githubusercontent.com/u/4",
+    },
+    description: {
+      problem:
+        "Music artists are not paid fairly. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
+      solution: "A platform for music NFTs",
+      useful_resources: [
+        {
+          name: "Audius",
+          url: "https://audius.co",
+        },
+        {
+          name: "Soundcloud",
+          url: "https://soundcloud.com",
+        },
+      ],
+    },
+    category: Category.NFTs,
+    difficulty: Difficulty.Beginner,
   },
 ];
