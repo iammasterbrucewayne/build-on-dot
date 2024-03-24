@@ -5,7 +5,7 @@ import { filter, isNil } from "lodash";
 export const filterIdeas = (
   ideas: Idea[],
   category: Category,
-  query: string | null
+  query: string | null | undefined
 ) => {
   const lowercaseCategory = category?.toLowerCase();
   const lowercaseQuery = query?.toLowerCase() || null;
