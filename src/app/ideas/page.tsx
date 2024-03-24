@@ -1,6 +1,6 @@
 "use client";
 
-import { useContext } from "react";
+import { Suspense, useContext } from "react";
 import { Box, Stack } from "@chakra-ui/react";
 import Navbar from "@/app/_components/common/navbar";
 import { useSearchParams } from "next/navigation";
@@ -9,7 +9,15 @@ import IdeaFilterMenuMobile from "../_components/ideas/IdeaFilterMenuMobile";
 import IdeasContext from "../_lib/context/ideas-context";
 import IdeaGrid from "../_components/ideas/IdeaGrid";
 
-export default function Ideas() {
+export default function Page() {
+  return (
+    <Suspense fallback={null}>
+      <Ideas />
+    </Suspense>
+  );
+}
+
+function Ideas() {
   const search = useSearchParams();
   const category = search?.get("category");
   const query = search?.get("query");

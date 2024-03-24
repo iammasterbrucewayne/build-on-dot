@@ -1,7 +1,10 @@
 import connectToDatabase from "@/app/_lib/mongodb";
 import { NextApiRequest, NextApiResponse } from "next";
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   try {
     const db = await connectToDatabase();
     const ideas = db.collection("ideas");
@@ -11,4 +14,4 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     console.error(error);
     res.status(500).json({ error: error });
   }
-};
+}

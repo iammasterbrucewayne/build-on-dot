@@ -94,15 +94,3 @@ export default function IdeaPage({ params }: { params: { slug: string } }) {
     </Box>
   );
 }
-
-export async function getStaticPaths() {
-  const ideas = await getIdeas();
-  return {
-    paths: ideas.map((idea: Idea) => ({
-      params: {
-        slug: idea.slug,
-      },
-    })),
-    fallback: false,
-  };
-}
