@@ -1,8 +1,4 @@
-import {
-  Button,
-  HStack,
-  VStack,
-} from "@chakra-ui/react";
+import { Button, HStack, VStack } from "@chakra-ui/react";
 
 export default function NavbarActions({ isMobile }: { isMobile?: boolean }) {
   return isMobile ? (
@@ -19,7 +15,9 @@ export default function NavbarActions({ isMobile }: { isMobile?: boolean }) {
         md: "flex",
       }}
     >
-      <Button rounded="full">Submit an idea</Button>
+      <Button rounded="full" isDisabled>
+        Submit an idea (soon)
+      </Button>
     </HStack>
   );
 }
